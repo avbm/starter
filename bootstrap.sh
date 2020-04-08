@@ -79,7 +79,7 @@ if [ ! -f $HOME/.venv/tools/bin/pipenv ]; then
 fi
 
 log_info "Install ansible"
-pipenv install ansible
+pipenv install ansible virtualenvwrapper
 
 log_info "Run ansible-playbook to install packages"
 ANSIBLE_CMD="ansible-playbook --connection local install-packages.yaml -v"
