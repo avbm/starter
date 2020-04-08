@@ -1,0 +1,52 @@
+---
+packages:
+  # Packages installed everywhere
+  common:
+    - curl
+    - wget
+    - htop
+    - tmux
+    - zsh
+    - grep
+    - git
+    - neovim
+    - make
+    - jq
+    - python3
+    - terminator
+    - golang
+    - nmap
+    - dos2unix
+    - ruby
+  # common packages for linux
+  # this is mostly used for brew formulae vs casks
+  linux_common:
+    - python3-pip
+    - gimp
+    - docker
+    - firefox
+  # Some packages have different names in Debian based vs RHEL based distros
+  ubuntu:
+    - python3-dev
+    - python3-venv
+    - snapd
+  snap:
+    - spotify
+  centos:
+    - python3-devel
+    - python3-virtualenv
+  # Homebrew formulae
+  homebrew:
+    - pcre
+    - pcre2
+    - minikube
+    - ripgrep
+    - rustup-init
+    - fzf
+  homebrew_cask:
+    - docker
+    - gimp
+    - virtualbox
+    - keepassxc
+    - spotify
+

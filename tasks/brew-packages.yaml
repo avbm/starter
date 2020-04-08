@@ -1,0 +1,19 @@
+---
+
+- name: Install Homebrew
+  shell:
+    cmd: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    args:
+      creates: /usr/local/bin/brew
+
+- name: Install Packages from brew
+  homebrew:
+    name: "{{ packages.common + packages.homebrew }}"
+    state: latest
+    update_homebrew: yes
+
+- name: Install Casks from brew
+  homebrew_cask:
+    name: "{{ packages.common + packages.homebrew_cask }}"
+    state: upgraded
+
