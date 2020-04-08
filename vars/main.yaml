@@ -49,4 +49,9 @@ packages:
     - virtualbox
     - keepassxc
     - spotify
-    # - iterm2
+    - firefox
+    - iterm2
+    - font-consolas-for-powerline
+    - font-inconsolata-for-powerline
+    - font-ubuntu-mono-derivative-powerline
+
