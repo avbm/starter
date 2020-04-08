@@ -18,20 +18,32 @@ function log_debug() {
 	fi
 }
 
+# Fail on error
+set -e
 
-if cat /proc/version | grep Ubuntu &> /dev/null; then
+if uname -a | grep 'Darwin' &> /dev/null; then
+	OS='Darwin'
+elif [ -f /proc/version ] && cat /proc/version | grep Ubuntu &> /dev/null; then
 	OS='Ubuntu'
+else
+	OS='Unknown'
 fi
+
+log_info "Set OS: $OS"
+
+log_info "Testing sudo: $(sudo echo 'Works' || echo 'Failed')" 
 
 if [ ! -z $(which python3) ]; then
 	PYTHON=$(which python3)
-	if [ 'Ubuntu'=$OS ]; then
+        log_debug "found python: $PYTHON"
+	if [ 'Ubuntu' == $OS ]; then
 		# venv and apt modules are not installed by default in Ubuntu
 		sudo apt-get install -y python3-venv python3-apt
 	fi
 	VENV="$(which python3) -m venv"
 elif [ ! -z $(which python2) ]; then
 	PYTHON=$(which python2)
+        log_debug "found python: $PYTHON"
 	sudo apt-get install -y python-pip python-virtualenv
 	VENV="$(which virtualenv) -p $PYTHON"
 # elif [ ! -z PYTHON=$(which python) ]; then
@@ -40,9 +52,6 @@ else
 	log_error "no python3 found in PATH: $PATH"
 	exit 1
 fi
-
-# Fail on error
-set -e
 
 
 log_info "found python at $PYTHON"
@@ -68,11 +77,12 @@ log_info "Install ansible"
 pipenv install ansible
 
 log_info "Run ansible-playbook to install packages"
+ANSIBLE_CMD="ansible-playbook --connection local install-packages.yaml -v"
 if [ 'Ubuntu'=$OS ]; then
-	ansible-playbook --connection local -e "ansible_python_interpreter=$PYTHON" install-packages.yaml
+	$ANSIBLE_CMD -e "ansible_python_interpreter=$PYTHON"
 	RET_VAL=$?
 else
-	ansible-playbook --connection local install-packages.yaml
+	$ANSIBLE_CMD
 	RET_VAL=$?
 fi
 

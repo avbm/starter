@@ -19,7 +19,7 @@
       when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 
     - name: Install packages from MacOSX
-      include_tasks: brew-packages.yaml
+      import_tasks: brew-packages.yaml
       when: ansible_distribution == 'MacOSX'
 
     - name: Install rust stable

@@ -13,7 +13,6 @@ packages:
     - make
     - jq
     - python3
-    - terminator
     - golang
     - nmap
     - dos2unix
@@ -25,6 +24,7 @@ packages:
     - gimp
     - docker
     - firefox
+    - terminator
   # Some packages have different names in Debian based vs RHEL based distros
   ubuntu:
     - python3-dev
@@ -49,4 +49,4 @@ packages:
     - virtualbox
     - keepassxc
     - spotify
-
+    # - iterm2
