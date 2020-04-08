@@ -19,7 +19,7 @@ function log_debug() {
 }
 
 
-if cat /proc/version | grep Ubuntu; then
+if cat /proc/version | grep Ubuntu &> /dev/null; then
 	OS='Ubuntu'
 fi
 
@@ -70,7 +70,11 @@ pipenv install ansible
 log_info "Run ansible-playbook to install packages"
 if [ 'Ubuntu'=$OS ]; then
 	ansible-playbook --connection local -e "ansible_python_interpreter=$PYTHON" install-packages.yaml
+	RET_VAL=$?
 else
 	ansible-playbook --connection local install-packages.yaml
+	RET_VAL=$?
 fi
+
+exit $RET_VAL
 
