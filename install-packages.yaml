@@ -35,5 +35,5 @@
     - name: change default shell to zsh
       user:
         name: "{{ ansible_user }}"
-        shell: /usr/bin/zsh
+        shell: /bin/zsh
       become: yes
