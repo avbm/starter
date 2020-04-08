@@ -5,14 +5,18 @@
     cmd: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     creates: /usr/local/bin/brew
 
-- name: Install Packages from brew
+- name: "Install Packages from brew"
   homebrew:
-    name: "{{ packages.common + packages.homebrew }}"
+    name: "{{ item }}"
     state: latest
     update_homebrew: yes
+  ignore_errors: yes
+  with_items: "{{ packages.common + packages.homebrew }}"
 
 - name: Install Casks from brew
   homebrew_cask:
-    name: "{{ packages.homebrew_cask }}"
+    name: "{{ item }}"
     state: installed
+  ignore_errors: yes
+  with_items: "{{ packages.homebrew_cask }}"
 
