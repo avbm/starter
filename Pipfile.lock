@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "4c92efe568436475227b8608a05a4ae1c0b5a89c85e712f5122fc4435b4eee01"
+            "sha256": "6f2d89030e1a6ad3314b17d70ebb016db06347fdc69989e908cee25ff1e4b98a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -18,10 +18,10 @@
     "default": {
         "ansible": {
             "hashes": [
-                "sha256:59cf3a0781f89992d1dae5205b07e802dff1db205eebd238de9e503b62b8cbc9"
+                "sha256:72449a3dde4142c79ef607dc6a2a02995b1c96f75d0ef5beffd00f3dfa6f93a6"
             ],
             "index": "pypi",
-            "version": "==2.9.6"
+            "version": "==2.8.10"
         },
         "appdirs": {
             "hashes": [
@@ -210,6 +210,7 @@
                 "sha256:6ea131d41c477f6c4b7863948a9a54f7fa196854dbef73efbdff32b509f4d8bf",
                 "sha256:94f647e12d1e6ced2541b93215e51752aecbd1bbb18eb1816e2867f7532b1fe1"
             ],
+            "index": "pypi",
             "version": "==20.0.16"
         },
         "virtualenv-clone": {
