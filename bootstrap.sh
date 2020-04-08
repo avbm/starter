@@ -44,7 +44,12 @@ if [ ! -z $(which python3) ]; then
 elif [ ! -z $(which python2) ]; then
 	PYTHON=$(which python2)
         log_debug "found python: $PYTHON"
-	sudo apt-get install -y python-pip python-virtualenv
+	if [ 'Ubuntu' == $OS ]; then
+		# venv and apt modules are not installed by default in Ubuntu
+		sudo apt-get install -y python-pip python-virtualenv
+	elif [ 'Darwin' == $OS ]; then
+		sudo pip install virtualenv
+	fi
 	VENV="$(which virtualenv) -p $PYTHON"
 # elif [ ! -z PYTHON=$(which python) ]; then
 # 	PYTHON=$(which python)
