@@ -25,6 +25,8 @@ if uname -a | grep 'Darwin' &> /dev/null; then
 	OS='Darwin'
 elif [ -f /proc/version ] && cat /proc/version | grep Ubuntu &> /dev/null; then
 	OS='Ubuntu'
+elif [ -f /etc/os-release ] && grep "^NAME=\"Arch"  /etc/os-release &> /dev/null; then
+	OS='Archlinux'
 else
 	OS='Unknown'
 fi

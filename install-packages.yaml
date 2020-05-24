@@ -18,6 +18,14 @@
       become: yes
       when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 
+    - name: Install packages with pacman
+      pacman:
+        name: "{{ packages.common + packages.linux_common + packages.archlinux }}"
+        state: latest
+        update_cache: yes
+      become: yes
+      when: ansible_distribution == 'Archlinux'
+
     - name: Install packages from MacOSX
       import_tasks: brew-packages.yaml
       when: ansible_distribution == 'MacOSX'
