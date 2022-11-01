@@ -33,13 +33,13 @@ fi
 
 log_info "Set OS: $OS"
 
-log_info "Testing sudo: $(sudo echo 'Works' || echo 'Failed')" 
+log_info "Testing sudo: $(sudo echo 'Works' || echo 'Failed')"
 
 if [ ! -z $(which python3) ]; then
 	PYTHON=$(which python3)
 	log_debug "found python: $PYTHON"
 	PYTHON_VERSION='3'
-	if [ 'Ubuntu' == $OS ]; then
+	if [[ 'Ubuntu' == $OS ]]; then
 		# venv and apt modules are not installed by default in Ubuntu
 		sudo apt-get install -y python3-venv python3-apt
 	fi
@@ -48,10 +48,10 @@ elif [ ! -z $(which python2) ]; then
 	PYTHON=$(which python2)
         PYTHON_VERSION='2'
         log_debug "found python: $PYTHON"
-	if [ 'Ubuntu' == $OS ]; then
+	if [[ 'Ubuntu' == $OS ]]; then
 		# venv and apt modules are not installed by default in Ubuntu
 		sudo apt-get install -y python-pip python-virtualenv python-apt
-	elif [ 'Darwin' == $OS ]; then
+	elif [[ 'Darwin' == $OS ]]; then
 		sudo pip install virtualenv
 	fi
 	VENV="$(which virtualenv) -p $PYTHON"
@@ -75,9 +75,9 @@ if [ ! -f $HOME/.venv/tools/bin/activate ]; then
 fi
 source $HOME/.venv/tools/bin/activate
 
-if [ ! -f $HOME/.venv/tools/bin/pipenv ]; then
+if [ ! -f $HOME/.venv/tools/bin/poetry ]; then
 	log_info "Install pre-requisites"
-	pip install --upgrade pip wheel setuptools pbr pipenv
+	pip install --upgrade pip wheel setuptools pbr poetry
 fi
 
 log_info "Install ansible"
@@ -86,7 +86,7 @@ if [[ $PYTHON_VERSION == '2' ]]; then
 else
 	ANSIBLE='ansible'
 fi
-pipenv install $ANSIBLE virtualenvwrapper
+poetry install $ANSIBLE virtualenvwrapper
 
 log_info "Run ansible-playbook to install packages"
 ANSIBLE_CMD="ansible-playbook --connection local install-packages.yaml -v"
@@ -105,8 +105,8 @@ if [[ "$PYTHON_VERSION" == "2" ]]; then
     PYTHON=$(which python3)
     $PYTHON -m venv $HOME/.venv/tools
     source $HOME/.venv/tools/bin/activate
-    pip install --upgrade pip setuptools wheel pbr pipenv
-    pipenv install ansible virtualenv
+    pip install --upgrade pip setuptools wheel pbr poetry
+    poetry install ansible virtualenv
 fi
 
 exit $RET_VAL
