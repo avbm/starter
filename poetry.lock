@@ -2,29 +2,29 @@
 
 [[package]]
 name = "ansible"
-version = "7.3.0"
+version = "9.6.0"
 description = "Radically simple IT automation"
 category = "main"
 optional = false
-python-versions = ">=3.9"
+python-versions = ">=3.10"
 files = [
-    {file = "ansible-7.3.0-py3-none-any.whl", hash = "sha256:5039bf0fe4cbb9dcc3dbefe464fe2fa7fe75d8548814f00c478d5fe90c3e3979"},
-    {file = "ansible-7.3.0.tar.gz", hash = "sha256:56c2fd97487b2cc83e39e895d8dfad8b2a5df34d490394a15735ebcfdc45f5be"},
+    {file = "ansible-9.6.0-py3-none-any.whl", hash = "sha256:8c0ffdc8dd58a22d709a5ac567bc62f17e689fb37bbf202788548c3d226631e0"},
+    {file = "ansible-9.6.0.tar.gz", hash = "sha256:58732a4ad74a746d299ecfa48b7a91cb217e2c0bd3a44493f2d9f29af2f3ab61"},
 ]
 
 [package.dependencies]
-ansible-core = ">=2.14.3,<2.15.0"
+ansible-core = ">=2.16.7,<2.17.0"
 
 [[package]]
 name = "ansible-core"
-version = "2.14.3"
+version = "2.16.7"
 description = "Radically simple IT automation"
 category = "main"
 optional = false
-python-versions = ">=3.9"
+python-versions = ">=3.10"
 files = [
-    {file = "ansible-core-2.14.3.tar.gz", hash = "sha256:093a4bc4a1259eaeb56ea37ec1d33cf1836c88f39281d89197f8d3480e068a58"},
-    {file = "ansible_core-2.14.3-py3-none-any.whl", hash = "sha256:a4b36bfdd7aa3534d449e9ae6a9fd82d8e513fda8caaf5d18e1e27d217151c8c"},
+    {file = "ansible_core-2.16.7-py3-none-any.whl", hash = "sha256:3e1b0ed76ff40d8722f1b5bf19348b95ff226ef5157f7afd720e3da1369a4a6e"},
+    {file = "ansible_core-2.16.7.tar.gz", hash = "sha256:a8c8f4facba30514571d47abec5c62a5768b86fef3d80d724911c8f20b7b34b7"},
 ]
 
 [package.dependencies]
@@ -32,7 +32,7 @@ cryptography = "*"
 jinja2 = ">=3.0.0"
 packaging = "*"
 PyYAML = ">=5.1"
-resolvelib = ">=0.5.3,<0.9.0"
+resolvelib = ">=0.5.3,<1.1.0"
 
 [[package]]
 name = "cffi"
@@ -338,4 +338,4 @@ test = ["commentjson", "packaging", "pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "5ad48701f43f8320f968a39e897484c750e805a74816e30e6ad78d4c696b4030"
+content-hash = "09edd4eeaea04556770fb223de70a70156903ad743cc507778e45006c562e73a"
