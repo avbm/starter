@@ -2,29 +2,29 @@
 
 [[package]]
 name = "ansible"
-version = "7.3.0"
+version = "10.6.0"
 description = "Radically simple IT automation"
 category = "main"
 optional = false
-python-versions = ">=3.9"
+python-versions = ">=3.10"
 files = [
-    {file = "ansible-7.3.0-py3-none-any.whl", hash = "sha256:5039bf0fe4cbb9dcc3dbefe464fe2fa7fe75d8548814f00c478d5fe90c3e3979"},
-    {file = "ansible-7.3.0.tar.gz", hash = "sha256:56c2fd97487b2cc83e39e895d8dfad8b2a5df34d490394a15735ebcfdc45f5be"},
+    {file = "ansible-10.6.0-py3-none-any.whl", hash = "sha256:b873b6ca13bde5b6bf9f0ae3b9dba91e135a9612c699d5f6a1e07d7ca2b00458"},
+    {file = "ansible-10.6.0.tar.gz", hash = "sha256:a8bde9c3ee8ee7c4a085e125777ba39bf837c6e74a0733e1f786389b125e6db2"},
 ]
 
 [package.dependencies]
-ansible-core = ">=2.14.3,<2.15.0"
+ansible-core = ">=2.17.6,<2.18.0"
 
 [[package]]
 name = "ansible-core"
-version = "2.14.3"
+version = "2.17.6"
 description = "Radically simple IT automation"
 category = "main"
 optional = false
-python-versions = ">=3.9"
+python-versions = ">=3.10"
 files = [
-    {file = "ansible-core-2.14.3.tar.gz", hash = "sha256:093a4bc4a1259eaeb56ea37ec1d33cf1836c88f39281d89197f8d3480e068a58"},
-    {file = "ansible_core-2.14.3-py3-none-any.whl", hash = "sha256:a4b36bfdd7aa3534d449e9ae6a9fd82d8e513fda8caaf5d18e1e27d217151c8c"},
+    {file = "ansible_core-2.17.6-py3-none-any.whl", hash = "sha256:dab09cd49fe7e17003e13188ce1ab52a0a6e5b88bc4bf29ff101cfdcb2862395"},
+    {file = "ansible_core-2.17.6.tar.gz", hash = "sha256:3e53970b7cebfe2adb39b711c1e2f8bbfcbedac828da51dc0357a19070638e95"},
 ]
 
 [package.dependencies]
@@ -32,7 +32,7 @@ cryptography = "*"
 jinja2 = ">=3.0.0"
 packaging = "*"
 PyYAML = ">=5.1"
-resolvelib = ">=0.5.3,<0.9.0"
+resolvelib = ">=0.5.3,<1.1.0"
 
 [[package]]
 name = "cffi"
@@ -338,4 +338,4 @@ test = ["commentjson", "packaging", "pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "5ad48701f43f8320f968a39e897484c750e805a74816e30e6ad78d4c696b4030"
+content-hash = "50de58fcef2ab76a86f41c2b282555e9ed2808d74f8a98183bcbb31cba905647"
