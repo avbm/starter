@@ -2,29 +2,29 @@
 
 [[package]]
 name = "ansible"
-version = "7.3.0"
+version = "10.7.0"
 description = "Radically simple IT automation"
 category = "main"
 optional = false
-python-versions = ">=3.9"
+python-versions = ">=3.10"
 files = [
-    {file = "ansible-7.3.0-py3-none-any.whl", hash = "sha256:5039bf0fe4cbb9dcc3dbefe464fe2fa7fe75d8548814f00c478d5fe90c3e3979"},
-    {file = "ansible-7.3.0.tar.gz", hash = "sha256:56c2fd97487b2cc83e39e895d8dfad8b2a5df34d490394a15735ebcfdc45f5be"},
+    {file = "ansible-10.7.0-py3-none-any.whl", hash = "sha256:0089f08e047ceb70edd011be009f5c6273add613fbe491e9697c0556c989d8ea"},
+    {file = "ansible-10.7.0.tar.gz", hash = "sha256:59d29e3de1080e740dfa974517d455217601b16d16880314d9be26145c68dc22"},
 ]
 
 [package.dependencies]
-ansible-core = ">=2.14.3,<2.15.0"
+ansible-core = ">=2.17.7,<2.18.0"
 
 [[package]]
 name = "ansible-core"
-version = "2.14.3"
+version = "2.17.14"
 description = "Radically simple IT automation"
 category = "main"
 optional = false
-python-versions = ">=3.9"
+python-versions = ">=3.10"
 files = [
-    {file = "ansible-core-2.14.3.tar.gz", hash = "sha256:093a4bc4a1259eaeb56ea37ec1d33cf1836c88f39281d89197f8d3480e068a58"},
-    {file = "ansible_core-2.14.3-py3-none-any.whl", hash = "sha256:a4b36bfdd7aa3534d449e9ae6a9fd82d8e513fda8caaf5d18e1e27d217151c8c"},
+    {file = "ansible_core-2.17.14-py3-none-any.whl", hash = "sha256:34a49582a57c2f2af17ede2cefd3b3602a2d55d22089f3928570d52030cafa35"},
+    {file = "ansible_core-2.17.14.tar.gz", hash = "sha256:7c17fee39f8c29d70e3282a7e9c10bd70d5cd4fd13ddffc5dcaa52adbd142ff8"},
 ]
 
 [package.dependencies]
@@ -32,7 +32,7 @@ cryptography = "*"
 jinja2 = ">=3.0.0"
 packaging = "*"
 PyYAML = ">=5.1"
-resolvelib = ">=0.5.3,<0.9.0"
+resolvelib = ">=0.5.3,<1.1.0"
 
 [[package]]
 name = "cffi"
@@ -338,4 +338,4 @@ test = ["commentjson", "packaging", "pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "5ad48701f43f8320f968a39e897484c750e805a74816e30e6ad78d4c696b4030"
+content-hash = "5da38a7e264e29ee5cdf4fdeabc2db3cb41bd5ca990f4cf640f3d8cf37d62e10"
